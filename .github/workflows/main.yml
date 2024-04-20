@@ -1,0 +1,17 @@
+name: Generate static links and deploy to GitHub Pages
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Generate & Deploy
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Generate
+      uses: brunoluiz/urlzap-github-action@v1
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: links
