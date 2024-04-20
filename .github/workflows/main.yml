@@ -1,6 +1,7 @@
 name: Generate static links and deploy to GitHub Pages
 on: [push]
-
+permissions:
+  contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
